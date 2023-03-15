@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const catalogRouter = require("./routes/catalog"); 
+require('dotenv').config()
 
 var app = express();
 
@@ -14,7 +15,7 @@ var app = express();
 const mongoose = require("mongoose");
 
 mongoose.set('strictQuery', false);
-const mongoDB = 'mongodb+srv://book-master:xyzGh0st@express-library-page.8wjxbti.mongodb.net/local_library?retryWrites=true&w=majority';
+const mongoDB = process.env.Atlas_Connection_String;
 
 main().catch(err => console.log(err));
 async function main() {
