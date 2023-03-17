@@ -32,7 +32,7 @@ AuthorSchema.virtual('url').get(function () {
 
 // virtual for author's lifespan
 AuthorSchema.virtual('lifespan').get(function () {
-  if (!this.date_of_birth && !this.date_of_death) { return 'Uknown Lifespan'; }
+  if (!this.date_of_birth && !this.date_of_death) { return 'Unknown Lifespan'; }
 
   const birthFormatted = this.date_of_birth ? DateTime.fromJSDate(this.date_of_birth).toLocaleString(DateTime.DATE_MED) : '';
   const deathFormatted = this.date_of_death ? DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED) : '';
